@@ -29,7 +29,7 @@ Preparação do ambiente de desenvolvimento da disciplina
    - Reiniciar a IDE (o próprio instalar solicita isso)
 
 4. Baixa e configurar o Glassfish
-  - Baixar o Glassfish de: https://javaee.github.io/glassfish/download
+  - Baixar o Glassfish de: https://javaee.github.io/glassfish/download (versão Web profile)
   - Extrair a pasta "glassfish5" em um local seguro em sua máquina (C: por exemplo)
   - Abrir o Netbeans, clicar em "Serviços" (se não estiver aparecendo, clicar em "Janela -> Serviços")
   - Clicar com o bt. direito em "Servidores" -> "Adicionar servidor"
