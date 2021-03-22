@@ -1,17 +1,17 @@
-
 package br.uninove;
 
+import java.util.List;
 
 public class Curso {
+
     private String nomeCurso;
-    private int cargaHoraria;
+    private List<Disciplina> disciplinas;
 
     public Curso() {
     }
 
-    public Curso(String nomeCurso, int cargaHoraria) {
+    public Curso(String nomeCurso) {
         this.nomeCurso = nomeCurso;
-        this.cargaHoraria = cargaHoraria;
     }
 
     public String getNomeCurso() {
@@ -23,10 +23,34 @@ public class Curso {
     }
 
     public int getCargaHoraria() {
-        return cargaHoraria;
+        int cargaHoraria = 0;
+        try {
+            for (Disciplina d : disciplinas) {
+                cargaHoraria += d.getCargaHoraria();
+            }
+            return cargaHoraria;
+        } catch (NullPointerException e) {
+            return 0;
+        }
+
     }
 
-    public void setCargaHoraria(int cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
+    }
+    
+    @Override
+    public String toString() {
+        String info = "";
+        info += "Curso: " + getNomeCurso() + " - " + getCargaHoraria() + "horas";
+        info += "\nDisciplinas: \n";
+        for(Disciplina d : getDisciplinas()) {
+            info += "\t - " + d.toString() + "\n";
+        }
+        return info;
     }
 }
