@@ -34,8 +34,6 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return getNome() + " (" + getCargaHoraria() + "hs)";
-                
+        return getNome() + " (" + getCargaHoraria() + "hs)";           
     }
-    
 }
