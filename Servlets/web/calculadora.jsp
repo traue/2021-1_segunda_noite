@@ -29,13 +29,9 @@
             <input type="submit" value="Dividir" name="btCalcular">
             <input type="submit" value="Potencia" name="btCalcular">
         </form>
-        <%
-            if(request.getParameter("result") != null) {
-        %>
-        <hr>
-        <strong>Resultado: </strong><%= request.getParameter("result") %>
-        <%
-            }
-        %>
+        <% if(request.getParameter("result") != null) { %>
+            <hr>
+            <strong>Resultado: </strong><%= request.getParameter("result") %>
+        <% } %>
     </body>
 </html>
