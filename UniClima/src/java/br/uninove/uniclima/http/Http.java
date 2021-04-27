@@ -32,7 +32,7 @@ public class Http {
             Tempo tempo;
             String charset = StandardCharsets.UTF_8.name();
             String url = "http://api.openweathermap.org/data/2.5/weather";
-            String appid = ""; //COLOCAR A SUA CHAVE DE API AQUI
+            String appid = "XXXX"; //COLOCAR A SUA CHAVE DE API AQUI
             String units = "metric";
             String lang = "pt_br";
             
