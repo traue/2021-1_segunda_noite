@@ -1,6 +1,7 @@
 package br.uninove.uniclima.utils;
 
 public class StrUtils {
+    
     public static String convertToTitleCase(String text) {
         if (text == null || text.isEmpty()) {
             return text;
@@ -22,5 +23,9 @@ public class StrUtils {
         }
 
         return converted.toString();
+    }
+    
+    public static String dot2Comma(Double value) {
+        return String.format("%.2f", value);
     }
 }

@@ -55,11 +55,11 @@
                             </div>
                             <div>
                                 <p><strong>Agora: </strong><%= StrUtils.convertToTitleCase(clima.getWeather().get(0).getDescription())%></p>
-                                <p><strong>Temperatura: </strong><%= clima.getMain().getTemp()%>ºC</p>
-                                <p><strong>Max: </strong><%= clima.getMain().getTempMax()%>ºC</p>
-                                <p><strong>Min: </strong><%= clima.getMain().getTempMin()%>ºC</p>
+                                <p><strong>Temperatura: </strong><%= StrUtils.dot2Comma(clima.getMain().getTemp()) %>ºC</p>
+                                <p><strong>Max: </strong><%= StrUtils.dot2Comma(clima.getMain().getTempMax())%>ºC</p>
+                                <p><strong>Min: </strong><%= StrUtils.dot2Comma(clima.getMain().getTempMin())%>ºC</p>
                                 <p><strong>Umidade: </strong><%= clima.getMain().getHumidity()%>%</p>
-                                <p><strong>Sensação térmica: </strong><%= clima.getMain().getFeelsLike()%>ºC</p>
+                                <p><strong>Sensação térmica: </strong><%= StrUtils.dot2Comma(clima.getMain().getFeelsLike())%>ºC</p>
                             </div>
                         </div>
                     </div>
