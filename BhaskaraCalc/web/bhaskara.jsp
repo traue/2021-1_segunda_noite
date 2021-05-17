@@ -1,3 +1,4 @@
+<%@page import="java.lang.NullPointerException"%>
 <%@page import="br.uninove.bhaskara.Bhaskara"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -13,10 +14,18 @@
         vC = Double.parseDouble(c);
         
         bhaskara = new Bhaskara(vA, vB, vC);
+        if(vA == 0) {
+            throw new NullPointerException();
+        }
+        
         bhaskara.calculaDelta();
         
     } catch(Exception ex) {
-        out.print("Erro na conversão numérica");
+        if(ex.getClass() == NullPointerException.class)
+            out.print("A não podia zer zero!");
+        else 
+            out.print("Erro na conversão numérica");
+        
         return;
     }
 %>
