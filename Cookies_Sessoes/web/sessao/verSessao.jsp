@@ -3,21 +3,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sessões</title>
+        <title>Sessão</title>
     </head>
     <body>
-        <%
-           String nome = "";
-           if(request.getParameter("nome") != null) {
-               nome = request.getParameter("nome");
-           }
-           
-            session.setAttribute("nomeUsuario", nome);
-        %>
         <h1>Trabalhando com Sessões</h1>
         <hr>
-        <h3>Valor incluído na sessão!</h3>
-        <a href="verSessao.jsp">Recuperar dados da sessão</a>
+        <p>
+            <strong>
+                Dado armazenado na sessão:
+            </strong>
+            <%= session.getAttribute("nomeUsuario")%>
+        </p>
         <br>
         <a href="./">Gerar novo valor para a sessão</a>
         <br>
