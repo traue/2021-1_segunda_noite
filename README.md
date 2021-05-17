@@ -7,9 +7,10 @@ Repositório da disciplina "Programação Avançada em Orientação a Objetos"
 
 ## Atividades
 
- - [Atividade 1](https://forms.gle/LibywUEQ4bLVAS4N7) - De 26.04 até 17.05, 19h
- - [Atividade 2](https://forms.gle/J3HwtMaaYYFQmSqM8) - De 03.05 até 17.05, 19h
- - [Atividade 3](https://forms.gle/jc2mdi5TEReR9qePA) - De 10.05 até 24.05, 19h
+ - [Atividade 1](https://forms.gle/LibywUEQ4bLVAS4N7) - De 26.04 até 17.05, 19h (encerrada)
+ - [Atividade 2](https://forms.gle/J3HwtMaaYYFQmSqM8) - De 03.05 até 07.06, 19h
+ - [Atividade 3](https://forms.gle/jc2mdi5TEReR9qePA) - De 10.05 até 07.06, 19h
+ - [Atividade 4](https://forms.gle/rpT5cAFin8ExAhqb9) - De 17.05 até 07.06, 19h
 
 
 Novas atividades serão postadas em breve aqui. Fique de olho! 😀
