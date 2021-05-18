@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 17/05/2021, 21:45:07
-    Author     : thiagograzianitraue
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
