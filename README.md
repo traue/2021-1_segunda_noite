@@ -15,7 +15,7 @@ Repositório da disciplina "Programação Avançada em Orientação a Objetos"
  - [Atividade 6](https://forms.gle/YG4jS45cPcQCHakg7) - De 31.05 até 07.06, 19h
 
 
-Novas atividades serão postadas em breve aqui. Fique de olho! 😀
+Essas são todas as atividades da disciplina. Não deixe de realizá-las o quanto antes. Dica do professor: Não deixe para a última hoje. ❤️
 
 
 ***
