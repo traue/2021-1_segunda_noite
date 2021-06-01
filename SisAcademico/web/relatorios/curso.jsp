@@ -43,7 +43,7 @@
                                 </span>
                             </td>
                             <% } else { %>
-                            <td><a href="./aluno.jsp?idCurso=<%=c.getKey().getIdCurso()%>" class="btn btn-success">Alunos Matriculados</a></td>
+                                <td><a href="./aluno.jsp?idCurso=<%=c.getKey().getIdCurso()%>" class="btn btn-success">Alunos Matriculados</a></td>
                             <% } %>
                             <td>Bt. Editar Curso</td>
                             <td>Bt. Excluir Curso</td>
