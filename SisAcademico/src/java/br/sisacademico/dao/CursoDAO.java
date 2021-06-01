@@ -17,8 +17,7 @@ public class CursoDAO {
         Map<Curso, Integer> relatorio = new HashMap<Curso, Integer>();
         stm = ConnectionFactory.getConnection().createStatement(
                 ResultSet.TYPE_SCROLL_INSENSITIVE,
-                ResultSet.CONCUR_READ_ONLY
-        );
+                ResultSet.CONCUR_READ_ONLY);
         
         String query = "SELECT \n" +
                 "    cursos.\"idCurso\", " +
@@ -43,6 +42,5 @@ public class CursoDAO {
         stm.getConnection().close();
         
         return relatorio;
-        //PARAMOS AQUI. FALTA TESTAR
     }
 }
