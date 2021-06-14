@@ -14,6 +14,7 @@
     </head>
     <body>
         <jsp:include page="../menu.jsp"></jsp:include>
+        <script src="../js/modal_exclusao.js"></script>
             <script>
                 $(function () {
                     $('[data-toggle="tooltip"]').tooltip()
@@ -46,7 +47,15 @@
                                 <td><a href="./aluno.jsp?idCurso=<%=c.getKey().getIdCurso()%>" class="btn btn-success">Alunos Matriculados</a></td>
                             <% } %>
                             <td>Bt. Editar Curso</td>
-                            <td>Bt. Excluir Curso</td>
+                            <% if (c.getValue() != 0) { %>
+                            <td>
+                                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Você não pode excluir um curso com alunos">
+                                    <button class="btn btn btn-secondary" disabled style="pointer-events: none;" type="button">Excluir</button>
+                                </span>
+                            </td>
+                            <% } else { %>
+                            <td><a id="deleteCurso" href="../CursoController?acao=delete&idCurso=<%=c.getKey().getIdCurso()%>" class="btn btn-danger">Excluir</a></td>
+                            <% } %>
                         </tr>
                         <% }%>
                     </tbody>
