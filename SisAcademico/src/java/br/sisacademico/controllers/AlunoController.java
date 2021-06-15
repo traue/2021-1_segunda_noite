@@ -13,6 +13,7 @@ public class AlunoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String acao = request.getParameter("acao");
             
@@ -27,6 +28,11 @@ public class AlunoController extends HttpServlet {
                         response.sendRedirect("relatorios/aluno.jsp");
                     }
                 }
+            } else if(acao.equalsIgnoreCase("cadastro")){
+                //PARAMOS AQUI...
+                //AQUI TEMOS QUE DISPARAR O EVENTO DE INCLUSÃO NO BANCO 
+                //DO AlunoDAO
+                out.print("vou cadastrar este aluno...");
             }
         }
     }

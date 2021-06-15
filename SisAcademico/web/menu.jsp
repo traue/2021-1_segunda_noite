@@ -24,7 +24,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="<%=request.getContextPath()%>/cadastros/curso.jsp">Cursos</a></li>
-                                <li><a class="dropdown-item" href="#">Alunos</a></li>
+                                <li><a class="dropdown-item" href="<%=request.getContextPath()%>/cadastros/aluno.jsp">Alunos</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
