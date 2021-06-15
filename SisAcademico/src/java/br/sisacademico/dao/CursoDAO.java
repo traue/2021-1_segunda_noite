@@ -57,4 +57,18 @@ public class CursoDAO {
             return false;
         }
     }
+    
+    public boolean insereCurso(Curso curso) {
+        try {
+            String query = "INSERT INTO \"tb_curso\" (\"nome_curso\", \"tipo_curso\") VALUES(?, ?)";
+            PreparedStatement stm = ConnectionFactory.getConnection().prepareStatement(query);
+            stm.setString(1, curso.getNomeCurso());
+            stm.setString(2, curso.getTipoCurso());
+            stm.execute();
+            stm.getConnection().close();
+            return true;
+        }catch(Exception ex) {
+            return false;
+        }
+    }
 }
