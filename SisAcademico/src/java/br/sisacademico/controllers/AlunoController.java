@@ -1,6 +1,8 @@
 package br.sisacademico.controllers;
 
 import br.sisacademico.dao.AlunoDAO;
+import br.sisacademico.model.Aluno;
+import br.sisacademico.model.Curso;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,23 +18,29 @@ public class AlunoController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String acao = request.getParameter("acao");
-            
-            if(acao.equalsIgnoreCase("delete")) {
+
+            if (acao.equalsIgnoreCase("delete")) {
                 int idAluno = Integer.parseInt(request.getParameter("idAluno"));
                 AlunoDAO aDAO = new AlunoDAO();
-                if(aDAO.deleteAluno(idAluno)) {
-                    if(Boolean.parseBoolean(request.getParameter("returnFilter"))) {
+                if (aDAO.deleteAluno(idAluno)) {
+                    if (Boolean.parseBoolean(request.getParameter("returnFilter"))) {
                         int idCurso = Integer.parseInt(request.getParameter("idCurso"));
                         response.sendRedirect("relatorios/aluno.jsp?idCurso=" + idCurso);
-                    }else {
+                    } else {
                         response.sendRedirect("relatorios/aluno.jsp");
                     }
                 }
-            } else if(acao.equalsIgnoreCase("cadastro")){
-                //PARAMOS AQUI...
-                //AQUI TEMOS QUE DISPARAR O EVENTO DE INCLUSÃO NO BANCO 
-                //DO AlunoDAO
-                out.print("vou cadastrar este aluno...");
+            } else if (acao.equalsIgnoreCase("cadastro")) {
+                Aluno aluno = new Aluno(
+                        0,
+                        Integer.parseInt(request.getParameter("raAluno")),
+                        request.getParameter("nomeAluno"),
+                        new Curso(Integer.parseInt(request.getParameter("idCurso")),
+                                null, null));
+                AlunoDAO aDAO = new AlunoDAO();
+                if(aDAO.insereAluno(aluno)) {
+                    response.sendRedirect("relatorios/aluno.jsp");
+                }
             }
         }
     }
