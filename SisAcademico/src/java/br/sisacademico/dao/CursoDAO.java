@@ -104,4 +104,22 @@ public class CursoDAO {
             return false;
         }
     }
+    
+    public boolean atualizaCurso(int idCurso, String nomeNovo, String tipoNovo) {
+        try {
+            String query = "UPDATE \"tb_curso\" SET "
+                    + "\"nome_curso\" = ?, "
+                    + "\"tipo_curso\" = ? "
+                    + "WHERE \"idCurso\" = ?";
+            PreparedStatement stm = ConnectionFactory.getConnection().prepareStatement(query);
+            stm.setString(1, nomeNovo);
+            stm.setString(2, tipoNovo);
+            stm.setInt(3, idCurso);
+            stm.execute();
+            stm.getConnection().close();
+            return true;
+        }catch(Exception ex) {
+            return false;
+        }
+    }
 }

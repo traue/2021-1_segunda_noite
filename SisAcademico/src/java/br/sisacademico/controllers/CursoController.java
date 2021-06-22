@@ -31,6 +31,14 @@ public class CursoController extends HttpServlet {
                 if(cDAO.insereCurso(c)){
                     response.sendRedirect("./relatorios/curso.jsp");
                 }
+            } else if(acao.equalsIgnoreCase("editar")) {
+                CursoDAO cDAO = new CursoDAO();
+                if(cDAO.atualizaCurso(
+                        Integer.parseInt(request.getParameter("idCurso")), 
+                        request.getParameter("nomeCurso"), 
+                        request.getParameter("tipoCurso"))) {
+                    response.sendRedirect("./relatorios/curso.jsp");
+                }
             }
         }
     }

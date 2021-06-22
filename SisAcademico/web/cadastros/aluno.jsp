@@ -1,3 +1,5 @@
+<%@page import="br.sisacademico.dao.AlunoDAO"%>
+<%@page import="br.sisacademico.model.Aluno"%>
 <%@page import="br.sisacademico.dao.CursoDAO"%>
 <%@page import="br.sisacademico.model.Curso"%>
 <%@page import="java.util.ArrayList"%>
@@ -5,6 +7,21 @@
 <%
     CursoDAO cDAO = new CursoDAO();
     ArrayList<Curso> cursos = cDAO.getCurso();
+    Aluno aluno;
+    String acao = "cadastro";
+    String txtBt = "Cadastrar";
+    
+    if(request.getParameter("idAluno") != null) {
+        AlunoDAO aDAO = new AlunoDAO();
+        int idAluno = Integer.parseInt(request.getParameter("idAluno"));
+        aluno = aDAO.getAluno(idAluno);
+        acao = "editar";
+        txtBt = "Salvar";
+    } else {
+        aluno = new Aluno();
+        aluno.setNome("");
+        aluno.setCurso(new Curso());
+    }
 %>
 <!DOCTYPE html>
 <html>
@@ -19,22 +36,29 @@
                     <form action="../AlunoController" method="post">
                         <div class="form-group">
                             <label>RA</label>
-                            <input type="number" name="raAluno" required class="form-control" placeholder="Informe o RA do aluno">
+                            <input type="number" name="raAluno" value="<%= aluno.getRa() == 0 ? "" : aluno.getRa()%>" required class="form-control" placeholder="Informe o RA do aluno">
                         </div>
                         <div class="form-group mt-3">
                             <label>Nome do aluno</label>
-                            <input type="text" name="nomeAluno" required class="form-control" placeholder="Informe o nome do aluno">
+                            <input type="text" name="nomeAluno" value="<%=aluno.getNome()%>" required class="form-control" placeholder="Informe o nome do aluno">
                         </div>
                         <div class="form-group mt-3">
                             <label>Selecione o Curso</label>
                             <select name="idCurso" class="form-control">
-                            <% for (Curso c : cursos) {%>
-                            <option value="<%=c.getIdCurso()%>"><%= c.getNomeCurso() + " (" + c.getTipoCurso() + ")"%></option>
+                            <% 
+                                for (Curso c : cursos) {
+                                    String opc = "";
+                                    if(aluno.getCurso().getIdCurso() == c.getIdCurso()) {
+                                        opc = "selected";
+                                    }
+                            %>
+                            <option <%=opc%> value="<%=c.getIdCurso()%>"><%= c.getNomeCurso() + " (" + c.getTipoCurso() + ")"%></option>
                             <% }%>
                         </select>
                     </div>
-                    <input type="submit" class="btn btn-primary w-100 mt-3" value="Cadastrar">
-                    <input type="hidden" name="acao" value="cadastro">
+                    <input type="submit" class="btn btn-primary w-100 mt-3" value="<%=txtBt%>">
+                    <input type="hidden" name="acao" value="<%=acao%>">
+                    <input type="hidden" name="idAluno" value="<%=aluno.getIdAluno()%>">
                 </form>
             </div>
         </div>

@@ -41,6 +41,15 @@ public class AlunoController extends HttpServlet {
                 if(aDAO.insereAluno(aluno)) {
                     response.sendRedirect("relatorios/aluno.jsp");
                 }
+            } else if(acao.equalsIgnoreCase("editar")) {
+                AlunoDAO aDAO = new AlunoDAO();
+                if(aDAO.atualizaAluno(
+                        Integer.parseInt(request.getParameter("idAluno")),
+                        Integer.parseInt(request.getParameter("raAluno")),
+                        request.getParameter("nomeAluno"),
+                        Integer.parseInt(request.getParameter("idCurso")))) {
+                    response.sendRedirect("relatorios/aluno.jsp");
+                }
             }
         }
     }
