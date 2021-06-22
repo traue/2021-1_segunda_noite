@@ -73,7 +73,7 @@
                         <% }%>
                     </tbody>
                 </table>
-                    <a href="../cadastros/aluno.jsp" class="btn btn-info">Novo Aluno</a>
+                <a href="../cadastros/aluno.jsp" class="btn btn-info">Novo Aluno</a>
             </div>
         </div>
     </body>
